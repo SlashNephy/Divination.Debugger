@@ -10,5 +10,6 @@
         Int32,
         UInt64,
         Int64,
+        HexView
     }
 }
