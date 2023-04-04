@@ -61,6 +61,7 @@ namespace Divination.Debugger.Window
 
                 ImGui.Combo("Data Type", ref Config.PlayerDataTypeIndex, dataTypes, dataTypes.Length);
 
+                ImGui.BeginDisabled(Config.PlayerDataType == DataType.HexView);
                 ImGui.Checkbox("Enable Value Filter", ref Config.PlayerEnableValueFilter);
                 unsafe
                 {
@@ -69,6 +70,7 @@ namespace Divination.Debugger.Window
                         ImGui.InputScalar("Value", ImGuiDataType.S64, new IntPtr(ptr));
                     }
                 }
+                ImGui.EndDisabled();
 
                 ImGui.Separator();
 
